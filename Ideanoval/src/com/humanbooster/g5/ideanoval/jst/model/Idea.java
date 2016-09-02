@@ -8,6 +8,7 @@ import java.util.Date;
  *
  */
 public class Idea implements Moderable {
+	private long ideaId;
 	private String title;
 	private String descritpion;
 	private boolean active;
@@ -52,6 +53,31 @@ public class Idea implements Moderable {
 		this.poll = poll;
 		this.category = category;
 	}
+
+
+	/**
+	 * @return the pollAccessible
+	 */
+	public boolean isPollAccessible() {
+		return pollAccessible;
+	}
+
+
+	/**
+	 * @param pollAccessible the pollAccessible to set
+	 */
+	public void setPollAccessible(boolean pollAccessible) {
+		this.pollAccessible = pollAccessible;
+	}
+
+
+	/**
+	 * @return the ideaId
+	 */
+	public long getIdeaId() {
+		return ideaId;
+	}
+
 
 	/**
 	 * 
