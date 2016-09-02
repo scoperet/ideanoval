@@ -18,6 +18,7 @@ public class CategoryIdea {
 	}
 
 	public CategoryIdea(String label, String description) {
+		super();
 		this.label = label;
 		this.description = description;
 	}
