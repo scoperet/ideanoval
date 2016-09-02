@@ -12,8 +12,7 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println("Je suis passé par la");
-		System.out.println("Moi aussi !");
+
 
 	}
 

@@ -8,6 +8,7 @@ package com.humanbooster.g5.ideanoval.jst.model;
 public class CategoryIdea {
 	private long categoryId;
 	private String label;
+	private String description;
 	
 	/**
 	 * 
@@ -16,12 +17,9 @@ public class CategoryIdea {
 		super();
 	}
 
-	/**
-	 * @param label
-	 */
-	public CategoryIdea(String label) {
-		super();
+	public CategoryIdea(String label, String description) {
 		this.label = label;
+		this.description = description;
 	}
 
 	/**
@@ -56,7 +54,15 @@ public class CategoryIdea {
 		this.label = label;
 	}
 
-	@Override
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Override
 	public String toString() {
 		return "CategoryIdea [categoryId=" + categoryId + ", label=" + label + "]";
 	}
