@@ -6,7 +6,7 @@ package com.humanbooster.g5.ideanoval.jst.model;
  *
  */
 public class Illustration {
-	private long ideaId;
+	private long illustrationd;
 	private String title;
 	private int width;
 	private int height;
@@ -121,7 +121,7 @@ public class Illustration {
 	 * @return
 	 */
 	public long getIdeaId() {
-		return ideaId;
+		return illustrationd;
 	}
 	
 	/**
@@ -137,7 +137,7 @@ public class Illustration {
 
 	@Override
 	public String toString() {
-		return "Illustration [ideaId=" + ideaId + ", title=" + title + ", width=" + width + ", height=" + height
+		return "Illustration [ideaId=" + illustrationd + ", title=" + title + ", width=" + width + ", height=" + height
 				+ ", weight=" + weight + ", format=" + format + "]";
 	}
 	
