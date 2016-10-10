@@ -16,6 +16,12 @@ public class CategoryService {
      */
     private Connection connection;
 
+    /**
+     * Paramètres des PreparedStatement
+     */
+    private final int FIRST_PARAMETER = 1;
+    private final int SECOND_PARAMETER = 2;
+
 
     public CategoryService(Connection connection) {
         this.databaseService = new DatabaseService(connection);
@@ -36,8 +42,8 @@ public class CategoryService {
                     + databaseService.getNbEntriesOfTable("category_idea"));
 
             ps = connection.prepareStatement(query);
-            ps.setString(1, category.getLabel());
-            ps.setString(2, category.getDescription());
+            ps.setString(FIRST_PARAMETER, category.getLabel());
+            ps.setString(SECOND_PARAMETER, category.getDescription());
             ps.execute();
             isCreated = true;
 
@@ -60,7 +66,7 @@ public class CategoryService {
         String query = "SELECT * FROM category_idea WHERE idCategory = ?;";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
-            ps.setInt(1, id);
+            ps.setInt(FIRST_PARAMETER, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 categoryWanted = new CategoryIdea(rs.getString("label"), rs.getString("description"));
@@ -95,7 +101,7 @@ public class CategoryService {
         String query = "DELETE FROM category WHERE label = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
-            ps.setString(1, name);
+            ps.setString(FIRST_PARAMETER, name);
             ps.execute();
             isDeleted = true;
         } catch (SQLException e) {
