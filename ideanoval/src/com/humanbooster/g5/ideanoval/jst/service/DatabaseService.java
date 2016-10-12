@@ -1,4 +1,4 @@
-package com.humanbooster.g5.ideanoval.jst.services;
+package com.humanbooster.g5.ideanoval.jst.service;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
