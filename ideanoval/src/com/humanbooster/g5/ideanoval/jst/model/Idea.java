@@ -19,6 +19,7 @@ public class Idea implements Moderable {
 	private Illustration illustration;
 	private Poll poll;
 	private CategoryIdea category;
+	private User user;
 
 	/**
 	 * 
@@ -38,9 +39,11 @@ public class Idea implements Moderable {
 	 * @param illustration
 	 * @param poll
 	 * @param category
+	 * @param user
 	 */
 	public Idea(String title, String descritpion, boolean active, Date publicationDate, boolean pollAccessible,
-			boolean votable, boolean stopEvaluation, Illustration illustration, Poll poll, CategoryIdea category) {
+			boolean votable, boolean stopEvaluation, Illustration illustration, Poll poll, CategoryIdea category,
+			User user) {
 		super();
 		this.title = title;
 		this.descritpion = descritpion;
@@ -52,6 +55,7 @@ public class Idea implements Moderable {
 		this.illustration = illustration;
 		this.poll = poll;
 		this.category = category;
+		this.user = user;
 	}
 
 
@@ -234,7 +238,15 @@ public class Idea implements Moderable {
 	public void setStopEvaluation(boolean stopEvaluation) {
 		this.stopEvaluation = stopEvaluation;
 	}
-	
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	/**
 	 * 
 	 */
@@ -247,15 +259,26 @@ public class Idea implements Moderable {
 	 * 
 	 */
 	@Override
-	public void deativate() {
+	public void desativate() {
 		this.active = false;
 	}
 
 	@Override
 	public String toString() {
-		return "Idea [title=" + title + ", descritpion=" + descritpion + ", active=" + active + ", publicationDate="
-				+ publicationDate + ", pollAccessible=" + pollAccessible + ", votable=" + votable + ", stopEvaluation="
-				+ stopEvaluation + ", illustration=" + illustration + ", poll=" + poll + ", category=" + category + "]";
+		return "Idea{" +
+				"ideaId=" + ideaId +
+				", title='" + title + '\'' +
+				", descritpion='" + descritpion + '\'' +
+				", active=" + active +
+				", publicationDate=" + publicationDate +
+				", pollAccessible=" + pollAccessible +
+				", votable=" + votable +
+				", stopEvaluation=" + stopEvaluation +
+				", illustration=" + illustration +
+				", poll=" + poll +
+				", category=" + category +
+				", user=" + user +
+				'}';
 	}
 
 }
